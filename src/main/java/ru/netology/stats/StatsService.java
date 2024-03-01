@@ -5,14 +5,23 @@ import java.util.stream.LongStream;
 
 public class StatsService {
 
-    public int sumSales(long[] sales) {
-        long sum = LongStream.of(sales).sum();
-        return (int) sum;
+    public long sumSales(long[] sales) {
+        long sum = 0;
+        for (long sale : sales) {
+            sum = sum + sale;
+        }
+
+        return sum;
     }
 
-    public int averSalesValue(long[] sales) {
-        long averageSales = LongStream.of(sales).sum() / sales.length;
-        return (int) averageSales;
+    public long averSalesValue(long[] sales) {
+        long sum = 0;
+        for (long sale : sales) {
+            sum = sum + sale;
+        }
+        long averageSales = sum / sales.length;
+
+        return averageSales;
     }
 
     public int maxSales(long[] sales) {
@@ -41,7 +50,11 @@ public class StatsService {
 
     public int belowAverSales(long[] sales) {
         int belowAverMonth = 0;
-        long averageSales = LongStream.of(sales).sum() / sales.length;
+        long sum = 0;
+        for (long sale : sales) {
+            sum = sum + sale;
+        }
+        long averageSales = sum / sales.length;
 
         for (int i = 0; i < sales.length; i++) {
             if (sales[i] < averageSales) {
@@ -54,7 +67,11 @@ public class StatsService {
 
     public int aboveAverSales(long[] sales) {
         int aboveAverMonth = 0;
-        long averageSales = LongStream.of(sales).sum() / sales.length;
+        long sum = 0;
+        for (long sale : sales) {
+            sum = sum + sale;
+        }
+        long averageSales = sum / sales.length;
 
         for (int i = 0; i < sales.length; i++) {
             if (sales[i] > averageSales) {
